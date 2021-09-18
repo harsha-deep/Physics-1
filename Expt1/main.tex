@@ -97,7 +97,7 @@ Replacing into \ref{eq:3} we obtain,
         g \, = \, \frac{8 \cdot h_o \cdot e} {(t^*_n)^2} \cdot \left[\frac{(\sqrt{e})^n - 1} {\sqrt{e} - 1} \right]^2 \label{eq:5}
 \end{myequation}
 
-\section{Error Propogation}
+\section{Error Propagation}
 \begin{gather*}
     Relative\ Error\ (\Delta error) = \frac{absolute\ error}{measurement} * 100\%\\
     \\
@@ -105,11 +105,11 @@ Replacing into \ref{eq:3} we obtain,
 \end{gather*}
 Dividing or multiplying two quantities results in a relative error equal to the sum of their respective relative errors,
 \begin{equation}
-    \frac{\Delta e}{e}= \frac{\Delta h_0}{h_0} + \frac{\Delta h_1}{h_1}
+    \frac{\Delta e}{e}= \frac{\Delta h_0}{h_0} + \frac{\Delta h_1}{h_1} \label{eq:6}
 \end{equation}
-To calculate the error propogation in g, we take log and differentiate equation \ref{eq:5} to obtain:
+To calculate the error propagation in g, we take log and differentiate equation \ref{eq:5} to obtain:
 \begin{equation}
-    \frac{\Delta g}{g}=\left[\frac{\Delta h_1}{h_1} + \frac{\Delta h_0}{h_0}\right]\cdot \left[\frac{1+ne^{\frac{n+1}{2}}-(n+1)e^{\frac{n}{2}}}{[1 - \sqrt{e}][1-(\sqrt{e})^n]}\right] + 2\frac{\Delta t_n}{t_n}+\frac{\Delta h_0}{h_0}
+    \frac{\Delta g}{g} \,= \, \frac{\Delta h_0}{h_0} + 2\frac{\Delta t^*_n}{t^*_n} + \frac{\Delta e}{e} + \frac{\Delta e}{\sqrt{e}(\sqrt{e} - 1)} + \frac{n(e^{n/2 - 1})\Delta e}{e^{n/2} - 1} \label{eq:7}
 \end{equation}
 
 \section{Procedure}
@@ -132,7 +132,7 @@ To calculate the error propogation in g, we take log and differentiate equation 
 
 
 
-\section{Observation tables and Error Analysis}
+\section{Observation tables, Error Analysis}
 % 1
 \noindent\makebox[\textwidth]{
 \begin{tabular}{|c|c|c|c|c|c| }
@@ -145,10 +145,19 @@ n & 3 & 3 & 3 & 3 & 3 \\ \hline
  g(m/s\textsuperscript{2}) & $ 9.6683 \pm 0.0008 $ & $ 9.6404 \pm 0.0011 $ & $ 9.7065 \pm 0.0009 $ & $ 9.8117 \pm 0.0002 $ & $ 9.7628 \pm 0.0002 $  \\ \hline
 \end{tabular}
 }
+
 \begin{center}
     IMT2020065 Shridhar Sharma
 \end{center}
-\vfill
+
+\begin{gather*}
+    \mathrm{ Average \ coefficient \ of \ restitution }= \bar{e} = \frac{\sum^{n}_{i=1}e_i} {n} = 0.6173 \\
+    \mathrm{ Average \ least \ count \ of \ g} = \bar{\Delta g} = 0.0006 \\
+    \mathrm{ Average \ acceleration \ due \ to \ gravity} = \bar{g} = \frac{\sum^{n}_{i=1}g_i} {n} = 9.7179 \pm 0.0006 \ m/s^2 \\
+    \mathrm{Acceleration \ due \ to \ gravity \ as \ measured \ by \ PhyPhox} = g(correct) = 9.75 \ m/s^2
+\end{gather*}
+
+
 
 % 2
 \noindent\makebox[\textwidth]{
@@ -162,10 +171,17 @@ n & 3 & 3 & 3 & 3 & 3 \\ \hline
  g(m/s\textsuperscript{2}) & $9.71 \pm 0.017$ & $9.72 \pm 0.017$ & $9.70 \pm 0.017$ & $9.88 \pm 0.017$ & $9.77 \pm 0.017$  \\ \hline
 \end{tabular}
 }
+
 \begin{center}
     IMT2020553 Abhinav Mahajan 
 \end{center}
-\vfill
+
+\begin{gather*}
+    \mathrm{ Average \ coefficient \ of \ restitution } = \bar{e} = \frac{\sum^{n}_{i=1}e_i} {n} = 0.586 \\
+    \mathrm{ Average \ least \ count \ of \ g} = \bar{\Delta g} = 0.0017 \\
+    \mathrm{ Average \ acceleration \ due \ to \ gravity} = \bar{g} = \frac{\sum^{n}_{i=1}g_i} {n} = 9.75 \pm 0.0017\ m/s^2 \\
+    \mathrm{Acceleration \ due \ to \ gravity \ as \ measured \ by \ PhyPhox} = g(correct) = 9.80 \ m/s^2
+\end{gather*}
 
 % 3
 \noindent\makebox[\textwidth]{
@@ -183,6 +199,13 @@ n & 3 & 3 & 3 & 3 & 3 \\ \hline
     IMT2020539 Shaurya Agrawal
 \end{center}
 
+\begin{gather*}
+    \mathrm{Average \ coefficient \ of \ restitution} = \bar{e} = \frac{\sum^{n}_{i=1}e_i} {n} = 0.57 \\
+    \mathrm{ Average \ least \ count \ of \ g} = \bar{\Delta g} = 0.0014 \\
+    \mathrm{Average \ acceleration \ due \ to \ gravity} = \bar{g} = \frac{\sum^{n}_{i=1}g_i} {n} = 9.72 \pm 0.0014 \ m/s^2 \\
+    \mathrm{Acceleration \ due \ to \ gravity \ as \ measured \ by \ PhyPhox} = g(correct) = 9.77 \ m/s^2
+\end{gather*}
+
 % 4
 \noindent\makebox[\textwidth]{
 \begin{tabular}{|c|c|c|c|c|c| }
@@ -198,15 +221,17 @@ n & 3 & 3 & 3 & 3 & 3 \\ \hline
 \begin{center}
     IMT2020085 Harshadeep Donapati
 \end{center}
-Average acceleration due to gravity = $\bar{g}$ =  
-\( \displaystyle \frac{$\sum^{n}_{i=1}g\textsubscript{i}$}{N}\) = $\frac{48.02}{5}$ = 9.604 \\
+
+\begin{gather*}
+    \mathrm{Average \ coefficient \ of \ restitution} = \bar{e} = \frac{\sum^{n}_{i=1}e_i} {n} = 0.6316 \\
+    \mathrm{ Average \ least \ count \ of \ g} = \bar{\Delta g} = 0.883 \\
+    \mathrm{Average \ acceleration \ due \ to \ gravity} = \bar{g} = \frac{\sum^{n}_{i=1}g_i} {n} = 9.604 \pm 0.883 \ m/s^2 \\
+    \mathrm{Acceleration \ due \ to \ gravity \ as \ measured \ by \ PhyPhox} = g(correct) = 9.67 \ m/s^2
+\end{gather*}
+
 \vspace{5mm}
-The standard deviation $\sigma$ is defined as \\
-\sigma = \sqrt{1/N \sum^{n}_{i=1g\textsubscript{i} - $\bar{g}$}^2 = $\sqrt{0.06152}$ = 0.248 m/s\textsuperscript{2}. \\
-Thus, the acceleration due to gravity is likely to be within (25.4 ±
-0.2 cm) and we write \\
-g = 9.604 \pm 0.248 m/s\textsuperscript{2}.
-\vfill
+
+
 
 % 5
 \noindent\makebox[\textwidth]{
@@ -220,9 +245,17 @@ n & 3 & 3 & 3 & 3 & 3 \\ \hline
  g(m/s\textsuperscript{2}) & $9.71 \pm 0.027$ & $9.30 \pm 0.024$ & $9.36 \pm 0.025$ & $9.32 \pm 0.023$ & $8.85 \pm 0.023$  \\ \hline
 \end{tabular}
 }
+
 \begin{center}
     IMT2020126 Ayushmaan Singh 
 \end{center}
+
+\begin{gather*}
+    \mathrm{Average \ coefficient \ of \ restitution} = \bar{e} = \frac{\sum^{n}_{i=1}e_i} {n} = 0.55 \\
+    \mathrm{ Average \ least \ count \ of \ g} = \bar{\Delta g} = 0.024 \\
+    \mathrm{Average \ acceleration \ due \ to \ gravity} = \bar{g} = \frac{\sum^{n}_{i=1}g_i} {n} = 9.22 \pm 0.024 \ m/s^2 \\
+    \mathrm{Acceleration \ due \ to \ gravity \ as \ measured \ by \ PhyPhox} = g(correct) = 9.34 \ m/s^2
+\end{gather*}
 
 
 % 6
@@ -237,11 +270,17 @@ n & 3 & 3 & 3 & 3 & 3 \\ \hline
  g(m/s\textsuperscript{2}) & $9.76 \pm 0.0002$ & $9.86 \pm 0.0002$ & $9.74 \pm 0.0002$ & $9.82 \pm 0.0002$ & $9.76 \pm 0.0002$  \\ \hline
 \end{tabular}
 }
+
 \begin{center}
    IMT2020057 Vishnutha Sheela
 \end{center}
 
-
+\begin{gather*}
+    \mathrm{Average \ coefficient \ of \ restitution} = \bar{e} = \frac{\sum^{n}_{i=1}e_i} {n} = 0.5629 \\
+    \mathrm{ Average \ least \ count \ of \ g} = \bar{\Delta g} = 0.0002 \\ 
+    \mathrm{Average \ acceleration \ due \ to \ gravity} = \bar{g} = \frac{\sum^{n}_{i=1}g_i} {n} = 9.7886 \pm 0.0002 \ m/s^2 \\
+    \mathrm{Acceleration \ due \ to \ gravity \ as \ measured \ by \ PhyPhox} = g(correct) = 9.71 \ m/s^2
+\end{gather*}
 
 
 
