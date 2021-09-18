@@ -94,8 +94,8 @@ From \ref{eq:4},
 \end{equation}
 Replacing into \ref{eq:3} we obtain, 
 
-\begin{myequation}
-        g \, = \, \frac{8 \cdot h_o \cdot e} {(t^*_n)^2} \cdot \left[\frac{(\sqrt{e})^n - 1} {\sqrt{e} - 1} \right]^2 
+\begin{myequation} 
+        g \, = \, \frac{8 \cdot h_o \cdot e} {(t^*_n)^2} \cdot \left[\frac{(\sqrt{e})^n - 1} {\sqrt{e} - 1} \right]^2 \label{eq:5}
 \end{myequation}
 
 
@@ -110,15 +110,15 @@ Replacing into \ref{eq:3} we obtain,
     Relative\ Error\ (\Delta error) = \frac{absolute\ error}{measurement} * 100\%\\
     \\
     \Delta h_0 = \frac{error\ in\ h_0}{measured\ h_0} * 100\%\ ,\ \ \Delta h_1 = \frac{error\ in\ h_1}{measured\ h_1} *100\%\\
-    \\
-    e = \frac{h_1}{h_0}\\
 \end{gather*}
-Dividing or multiplying two quantities results in a relative error equal to the sum of their respective relative errors
-\begin{gather*}
-    \frac{\Delta e}{e}= \frac{\Delta h_0}{h_0} + \frac{\Delta h_1}{h_1}\\
+Dividing or multiplying two quantities results in a relative error equal to the sum of their respective relative errors,
+\begin{equation}
+    \frac{\Delta e}{e}= \frac{\Delta h_0}{h_0} + \frac{\Delta h_1}{h_1}
+\end{equation}
+To calculate the error propogation in g, we will take log and differentiate equation \ref{eq:5},
+\begin{equation}
     \frac{\Delta g}{g}=\left[\frac{\Delta h_1}{h_1} + \frac{\Delta h_0}{h_0}\right]\cdot \left[\frac{1+ne^{\frac{n+1}{2}}-(n+1)e^{\frac{n}{2}}}{[1 - \sqrt{e}][1-(\sqrt{e})^n]}\right] + 2\frac{\Delta t_n}{t_n}+\frac{\Delta h_0}{h_0}
-\end{gather*}
-
+\end{equation}
 
 
 
