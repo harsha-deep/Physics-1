@@ -53,6 +53,79 @@ bouncing ball \& finding the coefficient of restitution.
 \item A Ruler
 \end{itemize}
 
+\section{Theory}
+To calculate g, we first make the following assumptions:
+\begin{enumerate}
+    \item We will ignore air drag (which is almost valid if the ball is dropped from a low height).
+    \item The time of contact between ball and floor is very short compared to the free-fall time.
+\end{enumerate}
+Under the following assumptions, we can use the relation, \[s = \frac{1}{2}gt^2\] to calculate g. But calculating the time taken for a single bounce will introduce intolerable uncertainty. So we consider the time taken by the ball for n bounces.
+The height reached by the ball after every bounce will be lower and lower, so we define the coefficient of restitution of energy in the following way:
+\begin{equation} 
+	\begin{aligned}[b]
+	e & \, = \, \frac{mgh_1}{mgh_o} \\
+	  & \, = \, \frac{h_1}{h_o} \label{eq:1}
+	\end{aligned}
+\end{equation}
+Taking $t_1$ as the time between the $1^{st}$ and $2^{nd}$ bounces,
+\begin{equation} \label{eq:2}
+    \begin{aligned}
+        g & \, = \, \frac{2 \cdot h_1}{(t_1 / 2)^2} 
+          & \, = \, 8 h_1 / t^2_1
+    \end{aligned}
+\end{equation}
+Using \ref{eq:1},
+\begin{equation} \label{eq:3}
+    g \, = \, 8 h_o e / t^2_1 
+\end{equation}
+We define $t^*_n$ as the time between the $1^{st}$ and $n^{th}$ bounce,
+\begin{equation}
+    \begin{aligned}[b]
+        t^*_n & \, = \, t_1 + t_2 + \ldots + t_n \\
+              & \, = \, t_1 + 2\sqrt{2 h_2 / g} + \ldots + 2\sqrt{2 h_n / g} \\
+              & \, = \, t_1 + 2(t_1/2)(\sqrt{e}) + \ldots + 2(t_1/2)(\sqrt{e})^{n - 1} \\
+              & \, = \, t_1[1 + \sqrt{e} + \ldots + (\sqrt{e})^{n - 1}] \\
+              & \, = \, t_1\frac{(\sqrt{e})^n - 1}{\sqrt{e} - 1} \label{eq:4}
+    \end{aligned}
+\end{equation}
+From \ref{eq:4},
+\begin{equation}
+         t_1 \,= \, t^*_n \left[\frac{\sqrt{e} - 1} {(\sqrt{e})^n - 1}\right]
+\end{equation}
+Replacing into \ref{eq:3} we obtain, 
+
+\begin{myequation}
+        g \, = \, \frac{8 \cdot h_o \cdot e} {(t^*_n)^2} \cdot \left[\frac{(\sqrt{e})^n - 1} {\sqrt{e} - 1} \right]^2 
+\end{myequation}
+
+
+
+
+
+
+
+
+\section{Error Propogation}
+\begin{gather*}
+    Relative\ Error\ (\Delta error) = \frac{absolute\ error}{measurement} * 100\%\\
+    \\
+    \Delta h_0 = \frac{error\ in\ h_0}{measured\ h_0} * 100\%\ ,\ \ \Delta h_1 = \frac{error\ in\ h_1}{measured\ h_1} *100\%\\
+    \\
+    e = \frac{h_1}{h_0}\\
+\end{gather*}
+Dividing or multiplying two quantities results in a relative error equal to the sum of their respective relative errors
+\begin{gather*}
+    \frac{\Delta e}{e}= \frac{\Delta h_0}{h_0} + \frac{\Delta h_1}{h_1}\\
+    \frac{\Delta g}{g}=\left[\frac{\Delta h_1}{h_1} + \frac{\Delta h_0}{h_0}\right]\cdot \left[\frac{1+ne^{\frac{n+1}{2}}-(n+1)e^{\frac{n}{2}}}{[1 - \sqrt{e}][1-(\sqrt{e})^n]}\right] + 2\frac{\Delta t_n}{t_n}+\frac{\Delta h_0}{h_0}
+\end{gather*}
+
+
+
+
+
+
+
+\section{Observation tables and Error Analysis}
 % 1
 \noindent\makebox[\textwidth]{
 \begin{tabular}{|c|c|c|c|c|c| }
@@ -155,71 +228,6 @@ n & 3 & 3 & 3 & 3 & 3 \\ \hline
 
 
 
-\section{Theory}
-To calculate g, we first make the following assumptions:
-\begin{enumerate}
-    \item We will ignore air drag (which is almost valid if the ball is dropped from a low height).
-    \item The time of contact between ball and floor is very short compared to the free-fall time.
-\end{enumerate}
-Under the following assumptions, we can use the relation, \[s = \frac{1}{2}gt^2\] to calculate g. But calculating the time taken for a single bounce will introduce intolerable uncertainty. So we consider the time taken by the ball for n bounces.
-The height reached by the ball after every bounce will be lower and lower, so we define the coefficient of restitution of energy in the following way:
-\begin{equation} 
-	\begin{aligned}[b]
-	e & \, = \, \frac{mgh_1}{mgh_o} \\
-	  & \, = \, \frac{h_1}{h_o} \label{eq:1}
-	\end{aligned}
-\end{equation}
-Taking $t_1$ as the time between the $1^{st}$ and $2^{nd}$ bounces,
-\begin{equation} \label{eq:2}
-    \begin{aligned}
-        g & \, = \, \frac{2 \cdot h_1}{(t_1 / 2)^2} 
-          & \, = \, 8 h_1 / t^2_1
-    \end{aligned}
-\end{equation}
-Using \ref{eq:1},
-\begin{equation} \label{eq:3}
-    g \, = \, 8 h_o e / t^2_1 
-\end{equation}
-We define $t^*_n$ as the time between the $1^{st}$ and $n^{th}$ bounce,
-\begin{equation}
-    \begin{aligned}[b]
-        t^*_n & \, = \, t_1 + t_2 + \ldots + t_n \\
-              & \, = \, t_1 + 2\sqrt{2 h_2 / g} + \ldots + 2\sqrt{2 h_n / g} \\
-              & \, = \, t_1 + 2(t_1/2)(\sqrt{e}) + \ldots + 2(t_1/2)(\sqrt{e})^{n - 1} \\
-              & \, = \, t_1[1 + \sqrt{e} + \ldots + (\sqrt{e})^{n - 1}] \\
-              & \, = \, t_1\frac{(\sqrt{e})^n - 1}{\sqrt{e} - 1} \label{eq:4}
-    \end{aligned}
-\end{equation}
-From \ref{eq:4},
-\begin{equation}
-         t_1 \,= \, t^*_n \left[\frac{\sqrt{e} - 1} {(\sqrt{e})^n - 1}\right]
-\end{equation}
-Replacing into \ref{eq:3} we obtain, 
-
-\begin{myequation}
-        g \, = \, \frac{8 \cdot h_o \cdot e} {(t^*_n)^2} \cdot \left[\frac{(\sqrt{e})^n - 1} {\sqrt{e} - 1} \right]^2 
-\end{myequation}
-
-
-
-
-
-
-
-
-\section{Error Propogation}
-\begin{gather*}
-    Relative\ Error\ (\Delta error) = \frac{absolute\ error}{measurement} * 100\%\\
-    \\
-    \Delta h_0 = \frac{error\ in\ h_0}{measured\ h_0} * 100\%\ ,\ \ \Delta h_1 = \frac{error\ in\ h_1}{measured\ h_1} *100\%\\
-    \\
-    e = \frac{h_0}{h_1}\\
-\end{gather*}
-\centering Dividing or multiplying two quantities results in a relative error equal to the sum of their respective relative errors
-\begin{gather*}
-    \frac{\Delta e}{e}= \frac{\Delta h_0}{h_0} + \frac{\Delta h_1}{h_1}\\
-    \frac{\Delta g}{g}=\left[\frac{\Delta h_1}{h_1} + \frac{\Delta h_0}{h_0}\right]\cdot \left[\frac{1+ne^{\frac{n+1}{2}}-(n+1)e^{\frac{n}{2}}}{[1 - \sqrt{e}][1-(\sqrt{e})^n]}\right] + 2\frac{\Delta t_n}{t_n}+\frac{\Delta h_0}{h_0}
-\end{gather*}
 
 
 
