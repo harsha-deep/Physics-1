@@ -4,6 +4,14 @@
 \usepackage[document]{ragged2e}
 \usepackage{relsize}
 \setlength{\tabcolsep}{4pt}
+\usepackage{graphicx} % \scalebox
+\usepackage{environ}
+\usepackage{amsmath}
+\NewEnviron{myequation}{%
+\begin{equation}
+\scalebox{1.4}{$\BODY$}
+\end{equation}
+}
 % \renewcommand{\arraystretch}{1.5}
 % \setlength{\arrayrulewidth}{0.5mm}
 
